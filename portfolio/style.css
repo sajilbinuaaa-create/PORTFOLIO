@@ -1,95 +1,99 @@
+
+
 /* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
-/* OUTER BOX (Full Screen Background) */
-.outer-box {
+/* Body Styling */
+body {
     height: 100vh;
-    width: 100%;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #8966ea, #b11919);
 }
 
-/* INNER BOX (Centered Card) */
-.inner-box {
-    width: 90%;
-    max-width: 700px;
+/* Main Card */
+.mainbox {
     background: #ffffff;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    padding: 40px 35px;
+    width: 380px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
 }
 
-/* Hero Section */
-.hero {
-    margin-bottom: 25px;
-}
-
-.profile-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
+/* Title */
+.mainbox h1 {
     margin-bottom: 15px;
-}
-
-h1 {
-    font-size: 28px;
+    font-weight: 600;
     color: #333;
 }
 
-h2 {
-    font-size: 18px;
-    color: #777;
-    margin-bottom: 10px;
-}
-
-.tagline {
+/* Paragraph */
+.mainbox p {
+    margin-bottom: 15px;
+    color: #666;
     font-size: 14px;
-    color: #555;
 }
 
-/* About Section */
-.about {
-    margin: 25px 0;
+/* Date Input */
+input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 14px;
+    margin-bottom: 18px;
+    transition: all 0.3s ease;
 }
 
-.about p {
-    color: #444;
-    font-size: 15px;
-    line-height: 1.6;
+input[type="date"]:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.4);
 }
 
-/* Links Section */
-.links {
-    margin-top: 20px;
-}
-
-.social-links a {
-    display: inline-block;
-    margin: 10px;
-    padding: 8px 15px;
-    background: #2a5298;
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
-    text-decoration: none;
-    border-radius: 20px;
-    transition: 0.3s;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.social-links a:hover {
-    background: #1e3c72;
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(118, 75, 162, 0.3);
 }
 
-/* Footer */
-footer {
-    margin-top: 25px;
-    font-size: 13px;
-    color: #888;
+/* Result */
+#result {
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #444;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

@@ -3,46 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sajil Binu | Software Engineer</title>
-    <link rel="stylesheet" href="style.css">
+    <title>AGE CALCULATOR</title>
+    <link rel="stylesheet" href="style.css"
 </head>
-
 <body>
+    <div class="mainbox">
+        <h1>Days Lived Calculator</h1>
+        <p>Enter your date of birth:</p>
+        
+        <input type="date" id="dob_input">
+        <button onclick="calculateDate()">Calculate</button>
+        
+        <p id="result"></p>
 
-    <header class="hero">
-        <div class="container">
-            <img src="images.jpeg" alt="Sajil Binu Profile Photo" class="profile-img">
-            <h1>Sajil Binu</h1>
-            <h2>Software Engineer</h2>
-            <p class="tagline">Building scalable and efficient software solutions.</p>
-        </div>
-    </header>
+        <script>
+            function calculateDate() {
+                const dob = document.getElementById('dob_input').value;
+                
+                if (!dob) {
+                    document.getElementById('result').innerText = 
+                        "Please select a date.";
+                    return;
+                }
 
-    <section class="about">
-        <div class="container">
-            <h3>About Me</h3>
-            <p>
-                I am a passionate Software Engineer focused on developing clean, 
-                efficient, and user-friendly applications. I enjoy solving real-world 
-                problems using modern technologies.
-            </p>
-        </div>
-    </section>
+                const dobObj = new Date(dob);
+                const today = new Date(); 
 
-    <section class="links">
-        <div class="container">
-            <h3>Connect With Me</h3>
-            <div class="social-links">
-                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
-                <a href="https://www.instagram.com/yourusername" target="_blank">Instagram</a>
-            </div>
-        </div>
-    </section>
+                const difference = Math.abs(today - dobObj);
+                const daysLived = Math.floor(difference / (1000 * 60 * 60 * 24));
 
-    <footer>
-        <p>© 2026 Sajil Binu. All Rights Reserved.</p>
-    </footer>
-
+                document.getElementById('result').innerText = 
+                    "You have lived approximately " + daysLived + " days.";
+            }
+        </script>
+    </div>
 </body>
 </html>
